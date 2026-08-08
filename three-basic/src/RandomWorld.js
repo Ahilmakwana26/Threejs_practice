@@ -22,7 +22,7 @@ window.addEventListener('resize',()=>{
     renderer.setSize(sizes.width , sizes.height);
 })
 
-for(let i = 0 ; i<=10;i++){
+for(let i = 0 ; i<=30;i++){
     let X = Math.floor(Math.random() * 16 - 5);
     let Y = Math.floor(Math.random() * 16 - 5);
     let Z = Math.floor(Math.random() * 16 - 5);

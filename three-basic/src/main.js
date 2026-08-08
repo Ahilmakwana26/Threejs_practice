@@ -4,15 +4,16 @@ const canvas = document.querySelector('.webgl');
 
 const scene = new THREE.Scene();
 
-const geometry = new THREE.BoxGeometry(1,1,1);
-const sunLight = new THREE.PointLight(0xffffff, 3);
+const geometry = new THREE.BoxGeometry(1,2,0.4);
+const sunLight = new THREE.PointLight(0xffffff, 1);
 sunLight.position.set(0, 0, 0);
 
 scene.add(sunLight);
 const material = new THREE.MeshStandardMaterial({
-    color: 0xffcc33,
-    emissive: 0xffaa00,
-    emissiveIntensity: 1.7
+    color: 0xfff1,
+    emissive: 0xfffff0,
+    emissiveIntensity: 0.5,
+    opacity:10
 });
 const mesh = new THREE.Mesh(geometry,material);
 
@@ -55,8 +56,8 @@ function animate(){
 
     control.update();
     let time = elapsedtime.getElapsedTime();
-    mesh.rotation.x = time;
-    mesh.rotation.y = time;
+    // mesh.rotation.x = time;
+    // mesh.rotation.y = time;
     renderer.render(scene,camera);
     requestAnimationFrame(animate);
 }
